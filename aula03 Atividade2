@@ -1,0 +1,323 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMv8QSWZFgQzjxQ+CnG5aJ9",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Widp2/aula3/blob/main/aula03%20Atividade2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "J_upZ5keQWhL",
+        "outputId": "4eda4f42-3425-4772-91ce-805ca12c5988"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "git version 2.34.1\n",
+            "user.name=Widp2\n",
+            "user.email=lucas.gds@sou.unijui.edu.br\n",
+            "init.defaultbranch=main\n"
+          ]
+        }
+      ],
+      "source": [
+        "!git --version\n",
+        "!git  config --global  user.name \"Widp2\"\n",
+        "!git  config --global  user.email \"lucas.gds@sou.unijui.edu.br\"\n",
+        "!git  config --global  init.defaultBranch main\n",
+        "!git  config --global  --list"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git clone https://github.com/Widp2/aula3.git\n",
+        "%cd aula3\n",
+        "!ls\n",
+        "!git status\n",
+        "!git remote -v"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8dKWuW0ES2XS",
+        "outputId": "36880a5b-1e2e-4e0a-d18d-15df556ac189"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cloning into 'aula3'...\n",
+            "remote: Enumerating objects: 3, done.\u001b[K\n",
+            "remote: Counting objects: 100% (3/3), done.\u001b[K\n",
+            "remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\u001b[K\n",
+            "Receiving objects: 100% (3/3), done.\n",
+            "/content/aula03/aula3\n",
+            "README.md\n",
+            "On branch main\n",
+            "Your branch is up to date with 'origin/main'.\n",
+            "\n",
+            "nothing to commit, working tree clean\n",
+            "origin\thttps://github.com/Widp2/aula3.git (fetch)\n",
+            "origin\thttps://github.com/Widp2/aula3.git (push)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile README.md\n",
+        "#aula3\n",
+        "\n",
+        "Arquivos da aula 03: Colab, Github, e Git\n",
+        "\n",
+        "##Widp2\n",
+        "Seu Nome"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wTfPMjaaVhHz",
+        "outputId": "c90c315c-e280-4901-9631-1dfa82d07494"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting README.md\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add README.md\n",
+        "!git status"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rRfEa3QWXWfI",
+        "outputId": "836dcedd-e53a-47c7-dbaf-1da635f4aa23"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch main\n",
+            "Your branch is up to date with 'origin/main'.\n",
+            "\n",
+            "Changes to be committed:\n",
+            "  (use \"git restore --staged <file>...\" to unstage)\n",
+            "\t\u001b[32mmodified:   README.md\u001b[m\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -m \"Updated README\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hQ1PmlCDXu60",
+        "outputId": "23a00be2-5eb1-4a40-d812-536057c9c744"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[main 4e1ce58] Updated README\n",
+            " 1 file changed, 6 insertions(+), 1 deletion(-)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!apt-get -qq update\n",
+        "!apt-get -qq install gh\n",
+        "!GH_PROMPT_DISABLED=1 gh auth login --hostname github.com --git-protocol https --web\n",
+        "!gh auth setup-git\n",
+        "!gh auth status"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "01FPzmsNZf3G",
+        "outputId": "46b177ab-e78d-490b-fd47-f59d079f5fef"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "W: Skipping acquire of configured file 'main/source/Sources' as repository 'https://r2u.stat.illinois.edu/ubuntu jammy InRelease' does not seem to provide it (sources.list entry misspelt?)\n",
+            "\n",
+            "\u001b[0;33m!\u001b[0m First copy your one-time code: \u001b[0;1;39m6F92-019D\u001b[0m\n",
+            "\u001b[0;1;39mOpen this URL\u001b[0m to continue in your web browser: https://github.com/login/device\n",
+            "\u001b[0;32m✓\u001b[0m Authentication complete.\n",
+            "- gh config set -h github.com git_protocol https\n",
+            "\u001b[0;32m✓\u001b[0m Configured git protocol\n",
+            "\u001b[0;33m!\u001b[0m Authentication credentials saved in plain text\n",
+            "\u001b[0;32m✓\u001b[0m Logged in as \u001b[0;1;39mWidp2\u001b[0m\n",
+            "\u001b[0;1;39mgithub.com\u001b[0m\n",
+            "  \u001b[0;32m✓\u001b[0m Logged in to github.com account \u001b[0;1;39mWidp2\u001b[0m (/root/.config/gh/hosts.yml)\n",
+            "  - Active account: \u001b[0;1;39mtrue\u001b[0m\n",
+            "  - Git operations protocol: \u001b[0;1;39mhttps\u001b[0m\n",
+            "  - Token: \u001b[0;1;39mgho_************************************\u001b[0m\n",
+            "  - Token scopes: \u001b[0;1;39m'gist', 'read:org', 'repo'\u001b[0m\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git push origin main"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9PBEBq06YE6B",
+        "outputId": "de003c94-ff15-4d4d-8e86-8d3e2157530e"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enumerating objects: 5, done.\n",
+            "Counting objects:  20% (1/5)\rCounting objects:  40% (2/5)\rCounting objects:  60% (3/5)\rCounting objects:  80% (4/5)\rCounting objects: 100% (5/5)\rCounting objects: 100% (5/5), done.\n",
+            "Delta compression using up to 2 threads\n",
+            "Compressing objects:  50% (1/2)\rCompressing objects: 100% (2/2)\rCompressing objects: 100% (2/2), done.\n",
+            "Writing objects:  33% (1/3)\rWriting objects:  66% (2/3)\rWriting objects: 100% (3/3)\rWriting objects: 100% (3/3), 314 bytes | 314.00 KiB/s, done.\n",
+            "Total 3 (delta 0), reused 0 (delta 0), pack-reused 0\n",
+            "To https://github.com/Widp2/aula3.git\n",
+            "   57cc218..4e1ce58  main -> main\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git pull origin main"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "w2ZHRgtzjxjz",
+        "outputId": "566a42df-b1cc-44fa-e773-c97cca4068c5"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "From https://github.com/Widp2/aula3\n",
+            " * branch            main       -> FETCH_HEAD\n",
+            "Already up to date.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "nome_aluno = input(\"Digite o nome do aluno: \")\n",
+        "\n",
+        "nota1 = float(input(\"Digite a primeira nota: \"))\n",
+        "nota2 = float(input(\"Digite a segunda nota: \"))\n",
+        "nota3 = float(input(\"Digite a terceira nota: \"))\n",
+        "\n",
+        "\n",
+        "media = (nota1 + nota2 + nota3) / 3\n",
+        "\n",
+        "print(\"\\n--- Relatório do Aluno ---\")\n",
+        "print(f\"Nome do Aluno: {nome_aluno}\")\n",
+        "print(f\"Nota 1: {nota1}\")\n",
+        "print(f\"Nota 2: {nota2}\")\n",
+        "print(f\"Nota 3: {nota3}\")\n",
+        "print(f\"Média: {media:.2f}\") # Display average with 2 decimal places"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 356
+        },
+        "id": "z8xQxyZFmSBq",
+        "outputId": "51541613-f376-479b-eae4-c103d50e4f6b"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "KeyboardInterrupt",
+          "evalue": "Interrupted by user",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_4557/3984906931.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# Get student's name\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mnome_aluno\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Digite o nome do aluno: \"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0;31m# Get three grades from input and convert them to float\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mnota1\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mfloat\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Digite a primeira nota: \"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36mraw_input\u001b[0;34m(self, prompt)\u001b[0m\n\u001b[1;32m   1175\u001b[0m                 \u001b[0;34m\"raw_input was called, but this frontend does not support input requests.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1176\u001b[0m             )\n\u001b[0;32m-> 1177\u001b[0;31m         return self._input_request(\n\u001b[0m\u001b[1;32m   1178\u001b[0m             \u001b[0mstr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mprompt\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1179\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_ident\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"shell\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m   1217\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1218\u001b[0m                 \u001b[0;31m# re-raise KeyboardInterrupt, to truncate traceback\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1219\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Interrupted by user\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1220\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mException\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1221\u001b[0m                 \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlog\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mwarning\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Invalid Message:\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mexc_info\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m: Interrupted by user"
+          ]
+        }
+      ]
+    }
+  ]
+}
